@@ -1,0 +1,22 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "A simple match making app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeyvon2434/friend-finder.git"
+  },
+  "author": "Joseph Von Edwins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeyvon2434/friend-finder/issues"
+  },
+  "homepage": "https://github.com/joeyvon2434/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
