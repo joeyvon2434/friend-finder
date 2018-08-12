@@ -11,18 +11,171 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-   
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
 </head>
 
 <body style="border: 0; padding: 0; margin: 0; background-color: rgb(9, 9, 214);">
     <div style="height: 100vh; width: 100%;">
-        <h1 style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">Survey Questions</h1>
+        <div style="width: 80%; margin-left: 10%; margin-top: 1%;">
+            <h1 style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94); border-bottom: 1px solid gray;">Survey Questions</h1>
+            <h2 style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">About You</h2>
+            <h3 style="margin-left: 2%; color: #F64C72; font-size: 15px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">All fields on this page are required</h3>
+            <label style="margin-left: 2%; color: #F64C72; font-size: 25px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">Name</label>
+            <br>
+            <input id="name" type="text" style="margin-left: 2%; font-family: 'Montserrat'; width: 60%;">
+            <br>
+            <label style="margin-left: 2%; color: #F64C72; font-size: 25px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">Link to a Photo</label>
+            <br>
+            <input id="photo" type="text" style="margin-left: 2%; font-family: 'Montserrat'; width: 60%;">
+            <br>
+            <div style="border-bottom: 1px solid gray; margin-top: 1%;"></div>
 
-        <footer style="position: absolute; bottom: 0; width: 100%; height: 50px;">
-            <p style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat';"><a href="/api/friendlist" style=" color: #F64C72;">API Friend List</a> | <a href="https://github.com/joeyvon2434/friend-finder" style=" color: #F64C72;">GitHub Repo</a></p>
-        </footer>
+            <h2 style="margin-left: 2%; margin-top: 1%; color: #F64C72; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">Questions</h2>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">1. You generally like to go out to social events instead of staying home.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question1">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">2. You get along with almost everyone.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question2">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">3. You enjoy active outdoor activities, such as hiking or kayaking.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question3">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">4. When watching movies, you prefer action over drama.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question4">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">5. If someone around you cuts you off, you generally speed up to cut them off for revenge.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question5">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">6. You generally enjoy having an alcoholic beverage with dinner.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question6">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">7. Kittens are cuter than puppies.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question7">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">8. When playing board games, the more complicated, the better.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question8">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">9. You are an adventurous eater.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question9">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <label style="margin-left: 2%; color: #F64C72; font-size: 20px; font-family: 'Montserrat'; text-shadow: 1px 1px rgb(45, 2, 94);">10. You generally prefer a concert over a sporting event.</label>
+            <br>
+            <div class="input-group mb-3" style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat'; width: 15%;">
+                <select class="custom-select" id="question10">
+                    <option selected>Choose...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+            </div>
+
+            <button type="submit" style="background-color: #242582; height: 50px; width: 50%; text-align: center; font-size: 20px; font-family: 'Montserrat'; padding-top: 7px; margin: 20px auto 20px 15%; color: #F64C72; position: relative; border: 2px solid rgba(255, 255, 255, 0.801); box-shadow: 2px 2px black; cursor: pointer; text-shadow: 1px 1px rgb(54, 4, 92);">Match me with a friend!</button>
+            <div style="border-bottom: 1px solid gray; margin-top: 1%; margin-bottom: 1%;"></div>
+
+            <footer style="position: relative; bottom: 0; width: 100%; height: 50px;">
+                <p style="margin-left: 2%; color: #F64C72; font-family: 'Montserrat';">
+                    <a href="/api/friendlist" style=" color: #F64C72;">API Friend List</a> |
+                    <a href="https://github.com/joeyvon2434/friend-finder" style=" color: #F64C72;">GitHub Repo</a>
+                </p>
+            </footer>
+        </div>
+
     </div>
 
     <!-- JQuery link-->
