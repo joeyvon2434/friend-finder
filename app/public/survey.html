@@ -176,26 +176,131 @@
             </footer>
         </div>
 
+        <div id="info-missing" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Required data is missing!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span id='close-x' aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>All fields are require. Please fill out all fields to continue.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="match-modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="match-name" class="modal-title">Cow</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span id='close-x-match' aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="match-photo" alt="pic of your match" src="https://us-east-1.tchyn.io/snopes-production/uploads/2017/11/cow_fb.jpg?resize=865%2C452"
+                            style="max-width: 90%;">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close-button-match" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <!-- JQuery link-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script>
-        $("#submit-button").on('click', function() {
+        $("#submit-button").on('click', function () {
             event.preventDefault();
 
             var newFriend = {
                 name: $("#name").val(),
                 imageLink: $("#photo").val().trim(),
                 scores: [$('#question1').val(), $('#question2').val(), $('#question3').val(), $('#question4').val(), $('#question5').val(), $('#question6').val(), $('#question7').val(), $('#question8').val(), $('#question9').val(), $('#question10').val()]
-            }
+            };
 
-            $.post("/api/friendlist", newFriend)
-            .then(function(data) {
-                console.log("survey.html", data);
-            });
+            var allowPost = true;
 
+            for (var i = 0; i < newFriend.scores.length; i++) {
+                if (newFriend.scores[i] == 'Choose...') {
+                    allowPost = false;
+                }
+            };
+
+            if (newFriend.name !== '' && newFriend.imageLink !== '' && allowPost == true) {
+
+
+
+                //console.log(newFriend);
+
+                $.post("/api/friendlist", newFriend, function (data) {
+                    console.log("survey.html", data);
+                    //console.log(newFriend);
+                }).then(function (data) {
+
+
+                    //empty fields when a valid submission is made
+                    $("#name").val('');
+                    $("#photo").val('');
+                    $('#question1').val('Choose...');
+                    $('#question2').val('Choose...');
+                    $('#question3').val('Choose...');
+                    $('#question4').val('Choose...');
+                    $('#question5').val('Choose...');
+                    $('#question6').val('Choose...');
+                    $('#question7').val('Choose...');
+                    $('#question8').val('Choose...');
+                    $('#question9').val('Choose...');
+                    $('#question10').val('Choose...');
+
+                    //get name and photo and populate the match fields
+                    $('#match-name').text(data.name);
+                    $('#match-photo').attr('src', data.photo);
+
+                    $('#match-modal').show();
+                });
+            } else {
+                $('#info-missing').show();
+                
+            }//end if statement to allow post
+
+
+        }); // end click function to match to friend
+
+
+        //Functions to close modals
+        ///////////////////////////////////////////
+        $('#close-button').on('click', function () {
+            event.preventDefault();
+            $('#info-missing').hide();
         });
+
+        $('#close-x').on('click', function () {
+            event.preventDefault();
+            $('#info-missing').hide();
+        });
+
+        $('#close-button-match').on('click', function () {
+            event.preventDefault();
+            $('#match-modal').hide();
+        });
+
+        $('#close-x-match').on('click', function () {
+            event.preventDefault();
+            $('#match-modal').hide();
+        });
+
     </script>
 </body>
 
