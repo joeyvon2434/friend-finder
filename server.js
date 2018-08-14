@@ -5,6 +5,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var fs = require('fs');
+var favicon = require("serve-favicon");
 
 
 //Set up express app
@@ -28,6 +29,10 @@ const apiRoutes = require('./app/routing/apiRoutes');
 //uses proper variables to connect routes from external routing files
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
+
+//display favicon
+/////////////////////////////////////
+app.use(favicon(path.join(__dirname,'app', 'public', 'favicon.png')));
 
 
 //Set server to listen on designated PORT
