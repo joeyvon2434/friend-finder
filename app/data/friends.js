@@ -1,6 +1,7 @@
-
+//set object to export
 var data = {};
 
+//create friendList array
 data.friendList = [
     {
         name: "A Bagel",

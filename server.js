@@ -21,24 +21,13 @@ app.use(bodyParser.json());
 //Routes
 /////////////////////////////////////
 
+//pulls in external routing files
 const htmlRoutes = require('./app/routing/htmlRoutes');
 const apiRoutes = require('./app/routing/apiRoutes');
 
+//uses proper variables to connect routes from external routing files
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
-
-
-//commented out routing in favor of external routing above
-/*
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./app/public/home.html"));
-});
-
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "./app/public/survey.html"));
-});
-*/
-
 
 
 //Set server to listen on designated PORT
