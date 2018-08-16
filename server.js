@@ -29,10 +29,12 @@ const apiRoutes = require('./app/routing/apiRoutes');
 //uses proper variables to connect routes from external routing files
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
+console.log(__dirname);
+//app.use(express.static(__dirname + "app" + "public"));
 
 //display favicon
 /////////////////////////////////////
-app.use(favicon(path.join(__dirname,'app', 'public', 'favicon.png')));
+//app.use(favicon(path.join(__dirname,'app', 'public')));
 
 
 //Set server to listen on designated PORT
